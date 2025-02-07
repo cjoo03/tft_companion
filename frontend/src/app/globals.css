@@ -23,3 +23,22 @@ body {
   background: var(--background);
   font-family: var(--font-geist-sans), Arial, sans-serif;
 }
+
+.hex-grid {
+  --hex-size: 60px;
+  --hex-gap: 4px;
+  position: relative;
+}
+
+.hex-cell {
+  position: relative;
+  cursor: pointer;
+}
+
+.hex-cell:hover {
+  filter: brightness(1.2);
+}
+
+.hex-cell.occupied:hover {
+  filter: brightness(1.3);
+}

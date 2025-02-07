@@ -154,3 +154,55 @@ async def get_match_details(match_id: str):
         return match_data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/api/champions")
+async def get_champions():
+    try:
+        # You'll need to implement the logic to fetch champion data from Riot's API
+        # This is a placeholder response
+        return {
+            "champions": [
+                {
+                    "id": "TFT9_Ahri",
+                    "name": "Ahri",
+                    "cost": 5,
+                    "traits": ["Star Guardian", "Sorcerer"],
+                    "ability": {
+                        "name": "Spirit Orb",
+                        "description": "Ahri sends out an orb that returns to her, dealing magic damage to enemies it passes through."
+                    },
+                    "stats": {
+                        "health": 850,
+                        "mana": 0,
+                        "armor": 40,
+                        "magicResist": 40,
+                        "dps": 55
+                    }
+                }
+                # Add more champions...
+            ]
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/api/items")
+async def get_items():
+    try:
+        # You'll need to implement the logic to fetch item data from Riot's API
+        # This is a placeholder response
+        return {
+            "items": [
+                {
+                    "id": 1,
+                    "name": "B.F. Sword",
+                    "description": "Grants Attack Damage",
+                    "imageUrl": "/items/bf-sword.png",
+                    "stats": {
+                        "attack_damage": 15
+                    }
+                }
+                # Add more items...
+            ]
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
